@@ -1,0 +1,9 @@
+{
+  "token": "YourBotToken",
+  "embedColor": "#ffd563",
+  "errorEmbedColor": "#FF0000",
+  "successEmbedColor": "#00FF00",
+  "warnEmbedColor": "#ff9124",
+  "ownerID": "YourDiscordID",
+  "clientId": "YoutBotClientID"
+}
