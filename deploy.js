@@ -25,14 +25,14 @@ const rest = new REST().setToken(token);
 
 (async () => {
 	try {
-		console.log(`Перезагрузка ${commands.length} слеш (/) команд.`);
+		console.log(`Перезагрузка ${commands.length} слэш (/) команд.`);
 
 		const data = await rest.put(
 			Routes.applicationCommands(clientId),
 			{ body: commands },
 		);
 
-		console.log(`Успешно перезагружено ${data.length} слеш (/) команд.`);
+		console.log(`Успешно перезагружено ${data.length} слэш (/) команд.`);
 	} catch (error) {
 		console.error(error);
 	}
