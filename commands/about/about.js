@@ -57,13 +57,12 @@ module.exports = {
         }
 
         const about = new EmbedBuilder()
-            .setTitle(`🧩 Информация о боте и разработчике`)
-            .setDescription('Краткая информация о боте')
-            .setColor(embedColor || null)
+            .setTitle('🧩 Информация о боте и разработчике')
+            .setColor(embedColor)
             .addFields(
                 { name: 'Разработчик', value: `${ownerUser.username}`, inline: true },
                 { name: 'Версия', value: botVersion, inline: true },
-                { name: 'Аптайм', value: `${procHuman} / ${human}`, inline: true }
+                { name: 'Аптайм', value: `${procHuman}`, inline: true }
             )
             .setTimestamp();
 
