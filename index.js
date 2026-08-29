@@ -1,10 +1,8 @@
-// импорты
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const fs = require('node:fs');
 const path = require('node:path');
 const { token } = require('./config.json');
 
-// интенты
 const client = new Client({
 	intents: [
 		GatewayIntentBits.Guilds,
@@ -14,7 +12,6 @@ const client = new Client({
 	],
 });
 
-//импорт команд
 client.commands = new Collection();
 client.cooldowns = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
@@ -34,7 +31,6 @@ for (const folder of commandFolders) {
 	}
 }
 
-// импорт ивентов
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
@@ -48,5 +44,4 @@ for (const file of eventFiles) {
 	}
 }
 
-// логин в бота
 client.login(token);

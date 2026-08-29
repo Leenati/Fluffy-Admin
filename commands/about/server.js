@@ -1,5 +1,5 @@
 const { EmbedBuilder, SlashCommandBuilder, ChannelType } = require('discord.js');
-const { embedColor, ownerId } = require('../../config.json')
+const { embedColor } = require('../../config.json')
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -34,7 +34,7 @@ module.exports = {
                 { name: 'Каналы', value: `${channelCount}`, inline: true },
                 { name: 'Роли', value: `${roleCount}`, inline: true },
                 { name: 'Верификация', value: `${verificationLevels[verificationLevel]}`, inline: true },
-                { name: 'Буст уровень', value: `${guild.premiumTier}`, inline: true }
+                { name: 'Уровень буста', value: `${guild.premiumTier}`, inline: true }
             )
             .setTimestamp();
         try {

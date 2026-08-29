@@ -38,15 +38,9 @@ module.exports = {
             return parts.join(', ');
         }
 
-        const startedAt = client && client.startedAt
-            ? client.startedAt
-            : (Date.now() - Math.floor(process.uptime() * 1000));
-
-        const ms = Date.now() - startedAt;
         const procMs = Math.floor(process.uptime() * 1000);
 
-        const human = formatUptime(ms);
-        const procHuman = formatUptime(procMs);
+        const proc = formatUptime(procMs);
 
         let ownerUser;
         try {
@@ -62,7 +56,7 @@ module.exports = {
             .addFields(
                 { name: 'Разработчик', value: `${ownerUser.username}`, inline: true },
                 { name: 'Версия', value: botVersion, inline: true },
-                { name: 'Аптайм', value: `${procHuman}`, inline: true }
+                { name: 'Аптайм', value: `${proc}`, inline: true }
             )
             .setTimestamp();
 
